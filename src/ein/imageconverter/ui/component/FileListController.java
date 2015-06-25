@@ -27,34 +27,8 @@ public class FileListController {
         checkColumn.setSortable(false);
         checkColumn.setCellValueFactory(new PropertyValueFactory<FileData, Boolean>("checked"));
 
-//        checkColumn.setCellFactory(new Callback<TableColumn<FileData, Boolean>, TableCell<FileData, Boolean>>() {
-//            public TableCell<FileData, Boolean> call(TableColumn<FileData, Boolean> p) {
-//                System.out.println("hoge");
-//                return new CheckBoxTableCell<FileData, Boolean>();
-//            }
-//        });
-
-
-
         checkColumn.setCellFactory(CheckBoxTableCell.forTableColumn(checkColumn));
 
-//        checkColumn.setCellFactory(column -> new TableCell<FileData, Boolean>(){
-//            public void updateItem(Boolean check, boolean empty) {
-//                super.updateItem(check, empty);
-//                if (check == null || empty) {
-//                    setGraphic(null);
-//                } else {
-//                    CheckBox box = new CheckBox();
-//                    ObservableValue<Boolean> cellObservableValue = column.getCellObservableValue(getIndex());
-//                    BooleanProperty checked = (BooleanProperty)cellObservableValue;
-//                    box.setSelected(checked.get());
-//                    box.selectedProperty().bindBidirectional(checked);
-//                    setGraphic(box);
-//                }
-//            }
-//        });
-
-        checkColumn.setEditable(true);
         tableView.setEditable(true);
 
 
